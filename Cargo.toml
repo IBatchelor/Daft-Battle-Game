@@ -1,0 +1,6 @@
+[package]
+name = "Daft-Battle-Game"
+version = "0.1.0"
+authors = ["Ivan <ivan.batchelor@gmail.com>"]
+
+[dependencies]
