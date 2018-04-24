@@ -1,6 +1,7 @@
 use engine::player::Player;
 use engine::unit::Unit;
 
+#[derive(Clone)]
 pub enum Terrain<'a> {
 	Plains,
 	Woodland,
@@ -9,6 +10,7 @@ pub enum Terrain<'a> {
 	Road
 }
 
+#[derive(Clone)]
 pub struct Tile<'a> {
 	pub terrain: Terrain<'a>,
 	pub unit: Option<&'a Unit>,
