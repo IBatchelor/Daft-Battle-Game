@@ -1,14 +1,6 @@
 use engine::player::Player;
 use engine::unit::Unit;
-
-#[derive(Clone)]
-pub enum Terrain<'a> {
-	Plains,
-	Woodland,
-	City(&'a Player),
-	Fortress(&'a Player),
-	Road
-}
+use engine::movement::terrain::Terrain;
 
 #[derive(Clone)]
 pub struct Tile<'a> {

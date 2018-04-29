@@ -1,22 +1,7 @@
+use engine::movement::MovementDetails;
+
 pub trait Unit{
-	fn get_movement_details(&self) -> UnitMovementDetails;
-}
-
-pub struct UnitMovementDetails {
-	pub distance: i32,
-	pub details: MovementDetails
-}
-
-pub struct MovementDetails {
-	pub movement_type: MovementType
-}
-
-pub enum MovementType{
-	Wheels,
-	Treads,
-	Foot,
-	Air,
-	Hovercraft,
+	fn get_movement_details(&self) -> MovementDetails;
 }
 
 pub enum UnitType{

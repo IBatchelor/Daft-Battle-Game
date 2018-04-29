@@ -1,10 +1,13 @@
 //Map Tests module
 use engine::cartography_engine::tile::Tile;
-use engine::cartography_engine::tile::Terrain;
 use engine::cartography_engine::map::Coordinates;
 use engine::cartography_engine::map::Location;
 use engine::cartography_engine::map::Map;
+use engine::movement::MovementDetails;
+use engine::movement::movement_type::MovementType;
 use engine::player::Player;
+use engine::movement::terrain::Terrain;
+use engine::unit::Unit;
 
 #[test]
 fn move_down_increments_the_current_tile_y_value_by_1(){
@@ -52,6 +55,41 @@ fn move_left_decrements_the_current_tile_x_value_by_1(){
 	assert_eq!(map.current_coordinates.y, orig_y);
 }
 
+#[test]
+fn check_unit_movement_when_movement_is_1_across_all_terrain_returns_diamond_of_appropriate_size(){
+	//unit has 2 movement points
+	//start unit on tile 3-3 of 5x5 map
+	//expect tiles (1,3),(2,2),(2,3),(2,4),(3,1),(3,2),(3,3),(3,4),(3,5),(4,2),(4,3),(4,4),(5,3)
+	
+}
+
+#[test]
+fn check_unit_movement_when_movement_is_2_across_all_terrain_returns_diamond_of_appropriate_size(){
+//2 movement points
+//start on 3-3
+//expect (2,3),(3,2),(3,3),(3,4),(4,3)
+}
+
+#[test]
+fn check_unit_movement_when_movement_cost_higher_than_points_returns_current_tile(){
+	//2 movement points, 3 movement cost, expect (3,3)
+}
+
+#[test]
+fn check_unit_movement_when_movement_prohibited_returns_current_tile(){
+	//unit surrounded by impassable terrain, expect (3,3)
+}
+
+#[test]
+fn check_unit_movement_calculates_correct_shape_for_general_terrain(){
+	//1,1,2,2,1 -> y,y,y,n,n
+	//2,1,1,2,1 -> y,y,y,y,y
+	//1,1,x,2,1 -> y,y,y,y,y
+	//2,2,3,3,1 -> y,y,y,n,y
+	//1,1,1,1,1 -> n,y,y,n,n
+	//unit has 4 movement points
+}
+
 fn create_basic_map<'a>() -> Map<'a> {
 	let players = &[Player::Blue, Player::Green][..];
 	let tiles = &[
@@ -84,3 +122,14 @@ fn create_basic_map<'a>() -> Map<'a> {
 	
 	Map::init(players, tiles)
 }
+
+struct MovementTestUnit {
+	movement_points : i32
+}
+
+//commented out because this is for when I've got the wheels tested
+//impl Unit for MovementTestUnit {
+//	fn get_movement_details(&self) -> MovementDetails {
+//		MovementDetails{distance : self.movement_points, details : MovementType::Wheels}
+//	}
+//}

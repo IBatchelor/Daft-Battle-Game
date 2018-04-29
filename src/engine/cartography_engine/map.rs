@@ -34,6 +34,10 @@ impl <'b> Map<'b>{
 	pub fn move_down(&mut self){
 		self.current_coordinates.y += 1;
 	}
+	
+	pub fn check_unit_movement(&mut self){
+	
+	}
 }
 
 #[derive(Hash, Eq, PartialEq, Clone)]

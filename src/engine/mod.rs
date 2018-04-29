@@ -1,4 +1,5 @@
 //engine module
+pub mod movement;
 mod cartography_engine;
 
 #[cfg(test)]

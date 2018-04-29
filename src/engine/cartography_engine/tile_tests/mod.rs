@@ -1,6 +1,6 @@
 //Tile Tests module
 use engine::cartography_engine::tile::Tile;
-use engine::cartography_engine::tile::Terrain;
+use engine::movement::terrain::Terrain;
 use engine::player::Player;
 use engine::unit::Unit;
 
