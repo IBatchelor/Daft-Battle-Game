@@ -19,17 +19,20 @@ impl <'b> Map<'b>{
 		Map{players : players, map : map, current_coordinates : coordinates}
 	}
 	
-	pub fn move_right(&self) {
-		
+	pub fn move_right(&mut self) {
+		self.current_coordinates.x += 1;
 	}
 	
-	pub fn move_left(&self) {
+	pub fn move_left(&mut self) {
+		self.current_coordinates.x -= 1;
 	}
 	
-	pub fn move_up(&self){
+	pub fn move_up(&mut self){
+		self.current_coordinates.y -= 1;
 	}
 	
-	pub fn move_down(&self){
+	pub fn move_down(&mut self){
+		self.current_coordinates.y += 1;
 	}
 }
 

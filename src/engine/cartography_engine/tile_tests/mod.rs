@@ -1,4 +1,4 @@
-#Tile Tests module
+//Tile Tests module
 use engine::cartography_engine::tile::Tile;
 use engine::cartography_engine::tile::Terrain;
 use engine::player::Player;
