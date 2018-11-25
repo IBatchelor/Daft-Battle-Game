@@ -36,7 +36,16 @@ impl <'b> Map<'b>{
 	}
 	
 	pub fn check_unit_movement(&mut self){
-	
+	    //Want to make this return list of tiles or co-ordinates where unit can move to
+		//If no unit on tile, presumably return NONE and let GUI/Engine deal with that
+		//If unit on tile, return SOME(tile[] or coordinates[])
+		//
+		//So, What do I need to do?
+		//See which tiles adjacent to the unit can be moved into (and for each one calculate what the remaining movement is)
+		//See which tiles adjacent to those (non-checked) the remaining movement can move to (and take the one with the highest remaining movement)
+		//Repeat until get to layer where none are viable
+		//Return the lot
+		
 	}
 }
 

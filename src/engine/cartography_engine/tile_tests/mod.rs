@@ -55,7 +55,7 @@ fn defence_points_for_road_returns_zero(){
 	assert_eq!(tile.defence_points(&Player::Blue), 0);
 }
 
-fn build_tile<'a>(terrain: Terrain<'a>, unit: Option<&'a Unit>) -> Tile<'a>{
+fn build_tile<'a>(terrain: Terrain<'a>, unit: Option<&'a T:Unit>) -> Tile<'a>{
 	Tile{
 		terrain,
 		unit,

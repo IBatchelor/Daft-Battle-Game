@@ -1,7 +1,8 @@
 use engine::movement::MovementDetails;
+use engine::movement::MovementClass;
 
 pub trait Unit{
-	fn get_movement_details(&self) -> MovementDetails;
+	fn get_movement_details<T : MovementClass>(&self) -> MovementDetails<T>;
 }
 
 pub enum UnitType{

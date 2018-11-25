@@ -5,8 +5,10 @@ use engine::cartography_engine::map::Location;
 use engine::cartography_engine::map::Map;
 use engine::movement::MovementDetails;
 use engine::movement::movement_type::MovementType;
+use engine::movement::MovementClass;
 use engine::player::Player;
 use engine::movement::terrain::Terrain;
+use engine::movement::wheels::Wheels;
 use engine::unit::Unit;
 
 #[test]
@@ -127,9 +129,8 @@ struct MovementTestUnit {
 	movement_points : i32
 }
 
-//commented out because this is for when I've got the wheels tested
-//impl Unit for MovementTestUnit {
-//	fn get_movement_details(&self) -> MovementDetails {
-//		MovementDetails{distance : self.movement_points, details : MovementType::Wheels}
-//	}
-//}
+impl Unit for MovementTestUnit {
+	fn get_movement_details<Wheels>(&self) -> MovementDetails<Wheels> {
+		MovementDetails{distance : self.movement_points, details : Wheels{}}
+	}
+}

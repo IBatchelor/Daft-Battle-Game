@@ -3,9 +3,9 @@ use engine::unit::Unit;
 use engine::movement::terrain::Terrain;
 
 #[derive(Clone)]
-pub struct Tile<'a> {
+pub struct Tile<'a > {
 	pub terrain: Terrain<'a>,
-	pub unit: Option<&'a Unit>,
+	pub unit: Option<&'a T>,
 	pub capture_points: i8
 }
 

@@ -7,11 +7,11 @@ pub struct Wheels{
 }
 
 impl MovementClass for Wheels{
-	fn get_type(&self) -> MovementType{
+	pub fn get_type(&self) -> MovementType{
 		MovementType::Wheels
 	}
 	
-	fn get_cost(&self, terrain : Terrain) -> Option<i32>{
+	pub fn get_cost(&self, terrain : Terrain) -> Option<i32>{
 		match terrain {
 			Terrain::City(ref player) => Some(1),
 			Terrain::Road => Some(1),

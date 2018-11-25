@@ -13,7 +13,7 @@ pub trait MovementClass {
 	fn get_cost(&self, terrain : Terrain) -> Option<i32>;
 }
 
-pub struct MovementDetails {
+pub struct MovementDetails<T : MovementClass>{
 	pub distance: i32,
-	pub details: MovementClass
+	pub details: T
 }
