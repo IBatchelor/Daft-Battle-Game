@@ -2,16 +2,16 @@ use engine::movement::terrain::Terrain;
 use engine::movement::movement_type::MovementType;
 use engine::movement::MovementClass;
 
-pub struct Wheels{
+struct Wheels{ //most likely will need to pub this in future
 	
 }
 
 impl MovementClass for Wheels{
-	pub fn get_type(&self) -> MovementType{
+	fn get_type(&self) -> MovementType{ //ditto this
 		MovementType::Wheels
 	}
 	
-	pub fn get_cost(&self, terrain : Terrain) -> Option<i32>{
+	fn get_cost(&self, terrain : Terrain) -> Option<i32>{ //ditto this
 		match terrain {
 			Terrain::City(ref player) => Some(1),
 			Terrain::Road => Some(1),

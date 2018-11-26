@@ -1,11 +1,11 @@
 use engine::player::Player;
-use engine::unit::Unit;
 use engine::movement::terrain::Terrain;
+use engine::movement::MovementClass;
 
 #[derive(Clone)]
 pub struct Tile<'a > {
 	pub terrain: Terrain<'a>,
-	pub unit: Option<&'a T>,
+	pub unit: Option<&'a MovementClass>,
 	pub capture_points: i8
 }
 
